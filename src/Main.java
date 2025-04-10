@@ -1,5 +1,3 @@
-
-
 public class Main {
     public static void main(String[] args) {
         // Kviečiame testavimo metodus kiekvienai užduočiai
@@ -38,6 +36,9 @@ public class Main {
 
         System.out.println("Funkcijos užduotis 12");
         testPrintWithDashes();
+
+        System.out.println("Funkcijos užduotis 13");
+        testGenerateRndStr();
     }
 
     // 1 užduotis: Funkcija suma
@@ -162,9 +163,88 @@ public class Main {
         System.out.println("---" + text + "---");
     }
     static void testPrintWithDashes() {
-        printWithDashes("Kopūstai ir ciberžolės"); // Testuojame su "labas"
+        printWithDashes("labas"); // Testuojame su "labas"
+    }
+
+    // 13 užduotis: Funkcija, kuri generuoja atsitiktinį tekstą
+    static String generateRndStr(int length) {
+        String symbols = "1T5GHLKMPB";
+        String text = "";
+        for (int i = 0; i < length; i++) {
+            text += symbols.charAt((int) (Math.random() * symbols.length()));
+        }
+        return text;
+    }
+    static void testGenerateRndStr() {
+        String randomText = generateRndStr(10); // Generuojame 10 simbolių tekstą
+        char numberToBracket = '5'; // Pasirenkame skaičių, kurį apgaubsime skliaustais (pvz., 5)
+        for (int i = 0; i < randomText.length(); i++) {
+            char currentChar = randomText.charAt(i);
+            // Tikriname, ar simbolis yra skaičius ir ar jis yra tas, kurį norime apgaubti
+            if (Character.isDigit(currentChar) && currentChar == numberToBracket) {
+                System.out.println("[" + currentChar + "]"); // Apgaubiame skliaustais
+            } else {
+                System.out.println(currentChar); // Spausdiname be skliaustų
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
